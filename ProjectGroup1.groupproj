@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EE8008DE-AF37-448F-BDD3-28AFEC400E4E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="IChecksumVerifier.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IChecksumVerifier">
+        <MSBuild Projects="IChecksumVerifier.dproj"/>
+    </Target>
+    <Target Name="IChecksumVerifier:Clean">
+        <MSBuild Projects="IChecksumVerifier.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IChecksumVerifier:Make">
+        <MSBuild Projects="IChecksumVerifier.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IChecksumVerifier"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IChecksumVerifier:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IChecksumVerifier:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
