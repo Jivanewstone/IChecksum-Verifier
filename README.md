@@ -8,4 +8,4 @@ Example Included
 
 Batch file usage :
 >Code:IChecksumVerifier.exe "hash.md5" "C:\Hash\"
-Note: Screenshot added in Issues!
+
